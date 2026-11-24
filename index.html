@@ -219,6 +219,46 @@ footer .logo { font-size: 26px; }
 footer p { margin: 8px 0 0; font-size: 13.5px; color: var(--ink-2); }
 footer .credit { font-size: 12.5px; color: var(--ink-3); }
 
+/* ── 전시 개관 ── */
+.build { margin-bottom: 40px; }
+.build-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: #1d1c1f; color: #fff; padding: 16px; border-radius: 4px; box-shadow: var(--shadow); position: relative; }
+.bstep { position: relative; padding: 10px 12px; text-align: center; }
+.bstep + .bstep::before { content: "→"; position: absolute; left: -8px; top: 50%; transform: translateY(-50%); color: #e6ff5c; font-weight: 900; }
+.bstep b { display: block; font-family: var(--px); font-size: 11px; color: #e6ff5c; }
+.bstep span { display: block; font-weight: 800; font-size: 16px; margin: 4px 0 2px; }
+.bstep small { font-size: 12.5px; color: #b4b0bd; }
+.bstep.hot { background: radial-gradient(ellipse at 50% 0%, rgba(255, 244, 200, .32), transparent 70%); border-radius: 4px; }
+.ex-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: start; }
+.ex-txt h3 { font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); margin: 10px 0 12px; }
+.ex-list { margin: 0 0 24px; padding: 0; list-style: none; display: grid; gap: 10px; }
+.ex-list li { position: relative; padding-left: 28px; color: var(--ink-2); }
+.ex-list li::before { content: ""; position: absolute; left: 2px; top: .55em; width: 14px; height: 10px; background: var(--lime); transform: rotate(-8deg); }
+.ex-list b { color: var(--ink); }
+.ex-phones { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 520px; }
+.ex-card { position: sticky; top: 90px; display: grid; justify-items: center; gap: 14px; padding: 26px 20px 20px; background: #0f0e12; border-radius: 6px; box-shadow: var(--shadow);
+  background-image: radial-gradient(ellipse 60% 55% at 50% 40%, rgba(255, 244, 205, .22), transparent 70%); }
+.ex-card .cap { color: #b4b0bd; margin: 0; }
+.flip { position: relative; width: min(360px, 100%); aspect-ratio: 2 / 3; perspective: 1400px; cursor: pointer; outline: none; }
+.flip img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 6px; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8);
+  transition: transform .9s cubic-bezier(.3, 1.3, .5, 1); }
+.flip .fb { transform: rotateY(180deg); }
+.flip.on .ff { transform: rotateY(-180deg); }
+.flip.on .fb { transform: rotateY(0deg); }
+.flip:focus-visible { box-shadow: 0 0 0 3px var(--lime); border-radius: 6px; }
+.ex-btns { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8px; width: min(360px, 100%); }
+.ex-btns .btn { justify-content: center; padding: 12px 10px; font-size: 14.5px; }
+.ex-btns .btn.sub { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .45); }
+.wave { display: none; align-items: center; gap: 3px; height: 16px; }
+#ttsBtn.on { background: var(--pink); color: #fff; box-shadow: 3px 4px 0 #fff; }
+#ttsBtn.on .wave { display: inline-flex; }
+.wave i { width: 3px; height: 30%; border-radius: 3px; background: #fff; animation: wv .9s ease-in-out infinite; }
+.wave i:nth-child(2) { animation-delay: .12s; } .wave i:nth-child(3) { animation-delay: .24s; } .wave i:nth-child(4) { animation-delay: .36s; } .wave i:nth-child(5) { animation-delay: .48s; }
+@keyframes wv { 50% { height: 100%; } }
+.ex-feats { margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 980px) { .ex-grid { grid-template-columns: 1fr; } .ex-card { position: static; } .ex-feats { grid-template-columns: 1fr 1fr; } .build-row { grid-template-columns: 1fr 1fr; gap: 6px; } .bstep + .bstep::before { display: none; } }
+@media (max-width: 620px) { .ex-feats { grid-template-columns: 1fr; } .ex-phones { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) { .flip img { transition: none; } .wave i { animation: none; } }
+
 /* ── 등장 효과 ── */
 .rv { opacity: 0; translate: 0 24px; transition: opacity .7s ease, translate .7s cubic-bezier(.2, .8, .2, 1); }
 .rv.in { opacity: 1; translate: 0 0; }
@@ -263,6 +303,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
       <li><a href="#why">왜 만들었나</a></li>
       <li><a href="#flow">수업 흐름</a></li>
       <li><a href="#feldman">펠드먼 4단계</a></li>
+      <li><a href="#exhibit">전시 개관</a></li>
       <li><a href="#map">차시 지도</a></li>
       <li><a href="#studio">표현 작업실</a></li>
       <li><a href="#tools">교사 도구</a></li>
@@ -330,7 +371,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
       <li class="rv"><span class="who t">교사</span><h4>답 공개 · 스포트라이트</h4><p><kbd style="font-family:var(--px);font-size:11px;background:#1d1c1f;color:#e6ff5c;padding:1px 5px">R</kbd> 로 답을 펼치고, 좋은 문장을 눌러 반 전체 휴대폰에 띄웁니다.</p></li>
       <li class="rv"><span class="who s">함께</span><h4>생각 나누기</h4><p>띄운 문장을 함께 읽고 다음 단계로. 늦은 학생은 앞 단계 탭으로 돌아가 마저 제출합니다.</p></li>
     </ol>
-    <p class="flow-note rv">✶ 경험치(XP)와 레벨, 마지막 인증 도장까지 — 비평 과정이 한 편의 게임처럼 이어집니다 ✶</p>
+    <p class="flow-note rv">✶ 단계마다 인증 도장 · 조립되는 미니 전시관 · 마지막엔 나만의 3D 아트 엽서 — 비평 과정이 한 편의 전시처럼 이어집니다 ✶</p>
   </div>
 </section>
 
@@ -346,7 +387,8 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
         <ul><li>그림에서 중요한 곳 <b>두 곳에 핀</b>을 찍고, 핀마다 <b>보이는 사실 한 문장</b>을 씁니다.</li>
           <li>'예쁘다·무섭다' 같은 <b>느낌 말이 들어가면 바로 안내</b>가 떠서 관찰 문장으로 고쳐 쓰게 됩니다.</li>
           <li>작품마다 준비된 <b>관찰 단어 칩</b>을 누르면 문장에 쏙 들어갑니다.</li>
-          <li>칠판에는 반 전체가 찍은 <b>① ② 핀 지도</b>가 그려져, 우리 반 시선이 어디에 모였는지 한눈에 보입니다.</li></ul></div>
+          <li>칠판에는 반 전체가 찍은 <b>① ② 핀 지도</b>가 그려져, 우리 반 시선이 어디에 모였는지 한눈에 보입니다.</li>
+          <li>제출하면 <b>"📍 단서 포착 완료!"</b> 도장이 쾅 찍히고, 쓴 글이 경험치 바로 쏙 빨려 들어갑니다.</li></ul></div>
       <div class="vis rv"><div class="phone rot-l"><img src="img/s-describe2.jpg" alt="학생 화면: 핀 두 개와 관찰 문장 쓰기" loading="lazy" width="780" height="1688"></div>
         <div class="shot"><span class="tape"></span><img src="img/t-describe.jpg" alt="교사 칠판: 반 전체 관찰 핀 지도와 학생 문장" loading="lazy" width="2160" height="1350"><p class="cap">칠판 — 우리 반 핀 지도</p></div></div>
     </div>
@@ -362,8 +404,8 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
     </div>
 
     <div class="fs" id="s3">
-      <div class="txt rv"><div class="num">03</div><span class="chip">의미 해석</span><h3>해석 — 내 단서로 작가의 뜻 읽기</h3><p class="sub">정답은 없어요, 근거만 있으면!</p>
-        <ul><li>1·2단계에서 내가 쓴 관찰과 분석이 <b>'내가 모은 단서'</b>로 자동 정리되어 위에 놓입니다.</li>
+      <div class="txt rv"><div class="num">03</div><span class="chip">의미 해석</span><h3>해석 — 내 근거로 작가의 뜻 읽기</h3><p class="sub">정답은 없어요, 근거만 있으면!</p>
+        <ul><li>1·2단계에서 내가 쓴 관찰과 분석이 <b>'내가 모은 근거'</b>로 자동 정리되어 위에 놓입니다.</li>
           <li>모든 작품에 같은 <b>열린 발문</b> — "작가는 이 그림을 통해 어떤 감정이나 이야기를 전하고 싶었을까?"</li>
           <li><b>🎭 분위기와 감정 · 🎨 표현의 의도 · 📖 숨은 메시지</b> 세 렌즈 중 하나를 골라 생각을 시작합니다.</li>
           <li>막힐 때 펼치는 예시 문장은 <b>다른 그림(폭풍우 바다)</b> 이야기라 베낄 수 없고, 쓰는 구조만 배웁니다.</li>
@@ -384,12 +426,63 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
     </div>
 
     <div class="fs" id="s5">
-      <div class="txt rv"><div class="num" style="font-size:72px">END</div><span class="chip pk">case solved</span><h3>결과 공개 — 진짜 제목과 숨은 이야기</h3><p class="sub">마지막에 밝혀지는 작품의 정체</p>
+      <div class="txt rv"><div class="num" style="font-size:72px">END</div><span class="chip pk">전시 개관</span><h3>결과 공개 — 진짜 제목과 숨은 이야기</h3><p class="sub">마지막에 밝혀지는 작품의 정체</p>
         <ul><li>수업 내내 가려 두었던 <b>작품 제목과 작가</b>가 이때 공개됩니다. 선입견 없이 그림만 보고 비평하게 하려는 장치입니다.</li>
           <li>🗝️ <b>숨은 비하인드 스토리</b>와 우리 반 <b>베스트 비평문 TOP 3</b>가 함께 나옵니다.</li>
-          <li>네 단계를 모두 마친 학생에게는 <b>인증 도장</b>이 쾅 찍힙니다.</li></ul></div>
+          <li>학생 화면에서는 <b>내 아트 엽서 다시 보기</b> 버튼으로 엽서를 꺼내 볼 수 있습니다.</li></ul></div>
       <div class="vis rv"><div class="phone rot-l"><img src="img/s-end.jpg" alt="학생 화면: 결과 공개와 인증 도장" loading="lazy" width="780" height="1688"></div>
         <div class="shot"><span class="tape"></span><img src="img/t-end.jpg" alt="교사 칠판: 작품 정체 공개와 베스트 비평문" loading="lazy" width="2160" height="1350"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3-2. 전시 개관 -->
+<section id="exhibit" style="padding-top:40px">
+  <div class="wrap">
+    <div class="head rv"><div class="sec-no">04 / EXHIBITION</div><h2>네 단계를 마치면, <mark>나만의 전시</mark>가 열립니다</h2>
+      <p class="sec-lead">단계를 통과할 때마다 작은 전시관이 하나씩 조립되고, 마지막 판단을 제출하는 순간 스포트라이트가 켜지며 내 비평이 담긴 3D 아트 엽서가 나타납니다.</p></div>
+
+    <div class="build rv">
+      <div class="build-row">
+        <div class="bstep"><b>01</b><span>🖼️ 액자 걸기</span><small>서술 제출</small></div>
+        <div class="bstep"><b>02</b><span>✨ 작품 스캔</span><small>분석 제출</small></div>
+        <div class="bstep"><b>03</b><span>📝 설명 명패 부착</span><small>해석 제출</small></div>
+        <div class="bstep hot"><b>04</b><span>🔦 스포트라이트 점등</span><small>판단 제출 → 3D 엽서 개관</small></div>
+      </div>
+    </div>
+
+    <div class="ex-grid">
+      <div class="ex-txt rv">
+        <span class="chip">단계마다 쾅!</span>
+        <h3>인증 도장 · 미니 전시관 · 경험치</h3>
+        <ul class="ex-list">
+          <li><b>📍 단서 포착 완료! · 📐 조형 설계 해독! · 💡 비평 원고 집필!</b> — 제출할 때마다 줄리앙이 축하하며 도장을 찍어 줍니다.</li>
+          <li>내가 쓴 글 카드가 작게 접혀 <b>경험치 바로 쏙</b> 빨려 들어가고, 게이지가 부드럽게 차오릅니다.</li>
+          <li>단계 탭 아래 <b>나의 미니 전시관</b>에 액자 → 스캔 빛 → 명패 → 조명이 차례로 더해집니다.</li>
+        </ul>
+        <div class="ex-phones"><div class="phone rot-l"><img src="img/s-stamp.jpg" alt="학생 화면: 단계 통과 인증 도장" loading="lazy" width="780" height="1688"></div>
+          <div class="phone rot-r"><img src="img/s-hall4.jpg" alt="학생 화면: 다 조립된 미니 전시관" loading="lazy" width="780" height="1688"></div></div>
+      </div>
+
+      <div class="ex-card rv">
+        <span class="chip pk">탭해서 뒤집어 보세요 ↻</span>
+        <div class="flip" id="flip" tabindex="0" role="button" aria-label="아트 엽서 앞면과 뒷면 뒤집기">
+          <img class="ff" src="img/pc-front.png" alt="엽서 앞면: 작품 · 비평 관점 · 제목과 작가 · 금박 큐레이터 인증" loading="lazy" width="900" height="1350">
+          <img class="fb" src="img/pc-back.png" alt="엽서 뒷면: 관찰 · 분석 · 해석 · 판단이 이어진 큐레이터 비평 에세이와 줄리앙 우표" loading="lazy" width="900" height="1350">
+        </div>
+        <div class="ex-btns">
+          <button type="button" class="btn sub" id="flipBtn">↻ 카드 뒤집기</button>
+          <button type="button" class="btn main" id="ttsBtn"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><b>🎧 도슨트 음성 들어 보기</b></button>
+        </div>
+        <p class="cap">실제 앱에서 만든 엽서입니다 · 화면 속 학생 글은 가상 예시</p>
+      </div>
+    </div>
+
+    <div class="ex-feats">
+      <div class="tool rv"><div class="ic">🎴</div><h4>3D 양면 아트 엽서</h4><p><b>앞면</b>은 작품과 내가 고른 비평 관점, 진짜 제목과 작가, 금박 '미술시간 큐레이터 인증'. <b>뒷면</b>은 1~4단계 문장이 한 편으로 이어진 큐레이터 비평 에세이와 줄리앙 우표, 'Curated by 내 이름' 서명.</p></div>
+      <div class="tool rv"><div class="ic">🎧</div><h4>AI 도슨트 음성</h4><p>브라우저에 들어 있는 한국어 음성이 미술관 도슨트처럼 차분한 속도(0.95)로 내 비평 에세이를 읽어 줍니다. 읽는 동안 음파가 움직입니다.</p></div>
+      <div class="tool rv"><div class="ic">📸</div><h4>이미지로 소장</h4><p>엽서 앞·뒷면을 깔끔한 세로 이미지 두 장으로 만들어 줍니다. 휴대폰은 길게 눌러 사진에 저장합니다.</p></div>
+      <div class="tool rv"><div class="ic">🗂️</div><h4>내 비평 도록집</h4><p>로비 맨 위 버튼으로 지금까지 완성한 엽서를 모아 보고, 다시 뒤집고, 다시 들을 수 있습니다.</p></div>
     </div>
   </div>
 </section>
@@ -397,7 +490,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <!-- 4. 차시 지도 -->
 <section id="map" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">04 / MAP</div><h2>한 차시에 <mark>명작 한 점</mark>을 깊이</h2>
+    <div class="head rv"><div class="sec-no">05 / MAP</div><h2>한 차시에 <mark>명작 한 점</mark>을 깊이</h2>
       <p class="sec-lead">선사 시대부터 인상주의까지, 서로 다른 시대의 명작을 같은 4단계로 읽습니다. 표현 단원은 여러 주에 걸친 실기 수업을 이어서 진행합니다.</p></div>
     <div class="map">
       <div class="lesson rv"><span class="no">01</span><div class="th"><img src="img/art-lascaux.jpg" alt="" loading="lazy"></div><h4>선사 시대 동굴 벽화</h4><p>라스코의 들소들</p><span class="unit">감상 · 4단계</span></div>
@@ -416,7 +509,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <section id="studio" style="padding-top:40px">
   <div class="wrap studio">
     <div class="rv">
-      <div class="sec-no">05 / STUDIO</div><h2>스케치부터 전시까지,<br><mark>표현 작업실</mark></h2>
+      <div class="sec-no">06 / STUDIO</div><h2>스케치부터 전시까지,<br><mark>표현 작업실</mark></h2>
       <p class="sec-lead">실기 수업은 몇 주에 걸쳐 이어집니다. 같은 반에서 다시 열면 지난 시간 게시물이 그대로 이어집니다.</p>
       <div class="tabs3"><div><b>✏️ 아이디어 스케치</b><span>생각을 그림으로</span></div><div><b>🎨 제작 과정</b><span>만들며 고민 나누기</span></div><div><b>🏆 완성작 전시관</b><span>작가 노트 · 전시</span></div></div>
       <div class="fs" style="padding:0;border:0;display:block"><ul>
@@ -437,7 +530,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <!-- 6. 교사 도구 -->
 <section id="tools" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">06 / TEACHER</div><h2>TV에 띄우고, <mark>키 하나로</mark> 진행</h2>
+    <div class="head rv"><div class="sec-no">07 / TEACHER</div><h2>TV에 띄우고, <mark>키 하나로</mark> 진행</h2>
       <p class="sec-lead">교사 화면은 프로젝터·TV용 칠판으로 설계했습니다. 수업 중에는 키보드 단축키만으로 진행할 수 있습니다.</p></div>
     <div class="tools">
       <div class="tool rv"><div class="ic">📱</div><h4>QR 입장</h4><p>수업을 열면 칠판에 QR과 접속한 학생 번호판이 뜹니다. 학생은 찍고 바로 들어옵니다.</p></div>
@@ -461,7 +554,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <!-- 7. 학생을 지키는 장치 -->
 <section id="safe" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">07 / CARE</div><h2>배움과 <mark>학생</mark>을 지키는 장치</h2></div>
+    <div class="head rv"><div class="sec-no">08 / CARE</div><h2>배움과 <mark>학생</mark>을 지키는 장치</h2></div>
     <div class="safe">
       <div class="rv" data-k="PRIVACY"><h4>🔒 개인정보는 최소로</h4><p>회원가입·로그인 없이 반·번호·이름만 씁니다. 칠판과 스포트라이트에는 이름이 나오지 않습니다.</p></div>
       <div class="rv" data-k="NO SPOILER"><h4>🙅 정답 떠먹이기 금지</h4><p>답을 암시하는 질문·키워드를 없애고, 예시는 다른 그림으로 보여 줍니다.</p></div>
@@ -477,7 +570,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <section id="start" style="padding-top:40px">
   <div class="wrap start">
     <div class="rv">
-      <div class="sec-no">08 / START</div><h2>주소 하나, <mark>QR 한 번</mark></h2>
+      <div class="sec-no">09 / START</div><h2>주소 하나, <mark>QR 한 번</mark></h2>
       <ol>
         <li><div><b>선생님이 수업 열기</b><span>교사 화면에서 반과 차시를 고르면 칠판에 QR이 뜹니다.</span></div></li>
         <li><div><b>학생 입장</b><span>QR을 찍거나 주소로 들어와 반·번호·이름을 입력하면 자동으로 오늘 수업에 들어옵니다.</span></div></li>
@@ -495,13 +588,15 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <!-- 9. FAQ -->
 <section id="faq" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">09 / FAQ</div><h2>자주 묻는 <mark>질문</mark></h2></div>
+    <div class="head rv"><div class="sec-no">10 / FAQ</div><h2>자주 묻는 <mark>질문</mark></h2></div>
     <div class="faq">
       <details class="rv"><summary>어떤 기기에서 되나요?</summary><p>인터넷 브라우저만 있으면 됩니다. 학생은 휴대폰·태블릿·노트북 모두 가능하고, 교사는 노트북을 TV나 프로젝터에 연결해 씁니다. 앱 설치는 필요 없습니다.</p></details>
       <details class="rv"><summary>학생 계정을 만들어야 하나요?</summary><p>아니요. 처음 한 번 학년·반·번호·이름을 고르면 그 기기에 기억되고, 선생님이 수업을 열면 자동으로 입장합니다.</p></details>
       <details class="rv"><summary>TV에 띄우면 학생 이름이 보이나요?</summary><p>칠판에 모이는 학생 답과 스포트라이트에는 이름이 나오지 않습니다. 선생님이 R 키로 답을 공개하기 전까지는 내용도 흐리게 가려져 있습니다.</p></details>
       <details class="rv"><summary>제출을 안 한 학생은 어떻게 되나요?</summary><p>선생님이 다음 단계로 넘기면 모든 학생이 함께 넘어갑니다. 못 낸 단계는 점선 표시가 되어, 탭을 눌러 돌아가 늦게라도 낼 수 있습니다.</p></details>
       <details class="rv"><summary>교사 화면을 꺼도 되나요?</summary><p>네. 수업 기록은 서버에 남아 있어 로비의 '최근 수업'에서 이어서 열 수 있습니다. '수업 끝내기'를 누르면 학생 화면은 대기 로비로 돌아갑니다.</p></details>
+      <details class="rv"><summary>아트 엽서와 도록집은 어디에 저장되나요?</summary><p>엽서를 만든 학생 기기의 브라우저에 저장됩니다. 다른 기기로 들어오거나 브라우저 기록을 지우면 도록집에 보이지 않으니, 남기고 싶은 엽서는 '이미지로 소장하기'로 저장해 두세요. 비평문 자체는 서버에 남아 선생님이 CSV로 내려받을 수 있습니다.</p></details>
+      <details class="rv"><summary>도슨트 음성이 안 나와요.</summary><p>기기에 한국어 음성이 있어야 합니다. 휴대폰이 무음 모드인지, 소리가 켜져 있는지 확인해 주세요. 목소리는 기기(아이폰·갤럭시·크롬북)마다 다릅니다.</p></details>
       <details class="rv"><summary>다른 작품으로 수업하고 싶어요.</summary><p>작품 이미지와 관찰 칩·분석 질문·비하인드 스토리를 작품 데이터 파일에 추가하면 됩니다. 차시 목록에 한 줄을 더하면 로비 지도에 새 카드가 생깁니다.</p></details>
     </div>
   </div>
@@ -519,6 +614,22 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   try { if (window.QRCode) new QRCode(document.getElementById("qr"), { text: "https://geurim-tamjeong-msq5z.web.app/", width: 400, height: 400, colorDark: "#1d1c1f", colorLight: "#fffdf8" }); } catch (e) {}
+  // 엽서 뒤집기 · 도슨트 음성 데모
+  const flip = document.getElementById("flip");
+  const doFlip = () => flip.classList.toggle("on");
+  flip.onclick = doFlip; flip.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); doFlip(); } };
+  document.getElementById("flipBtn").onclick = doFlip;
+  const tts = document.getElementById("ttsBtn"), ESSAY = "씨름, 김홍도. 큐레이터의 비평 에세이입니다. 그림 앞에 서서 가장 먼저 눈에 들어온 장면은 이렇다. 가운데에서 두 사람이 서로 붙잡고 있다. 구경꾼들이 둥글게 앉아 있다. 조형의 눈으로 다시 보면, 구도와 시선을 살펴보면 가운데 씨름꾼에게 모인다. 화가는 구경꾼들을 둥근 원 모양으로 배치하여 시선이 가운데 씨름꾼으로 모이게 했고, 이를 통해 흥겹고 떠들썩한 분위기를 전달하려 했다. 그래서 나는 이렇게 평가한다. 이 작품은 흥겹고 떠들썩한 감정을 생생하게 전달하기 때문에 가치가 있다.";
+  let speaking = false;
+  const setOn = (on) => { speaking = on; tts.classList.toggle("on", on); tts.querySelector("b").textContent = on ? "⏹ 음성 멈추기" : "🎧 도슨트 음성 들어 보기"; };
+  if (!("speechSynthesis" in window)) { tts.disabled = true; tts.querySelector("b").textContent = "이 브라우저는 음성을 지원하지 않아요"; }
+  else tts.onclick = () => {
+    if (speaking) { speechSynthesis.cancel(); return setOn(false); }
+    const parts = ESSAY.match(/[^.!?]+[.!?]*/g).map((x) => x.trim()).filter(Boolean), v = speechSynthesis.getVoices().find((x) => /^ko/i.test(x.lang));
+    let i = 0; setOn(true); speechSynthesis.cancel();
+    const next = () => { if (!speaking || i >= parts.length) return setOn(false); const u = new SpeechSynthesisUtterance(parts[i++]); u.lang = "ko-KR"; u.rate = .95; if (v) u.voice = v; u.onend = next; u.onerror = () => setOn(false); speechSynthesis.speak(u); };
+    next();
+  };
   // 스크롤하면 하나씩 붙는 콜라주 (움직임 줄이기 설정이면 바로 표시)
   const els = document.querySelectorAll(".rv");
   if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {

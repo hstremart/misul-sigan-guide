@@ -172,6 +172,14 @@ h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(30px, 4.4vw, 
 
 /* ── 교사 도구 ── */
 .tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.tools.four { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 980px) { .tools.four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .tools.four { grid-template-columns: 1fr; } }
+.blockplan { display: grid; grid-template-columns: repeat(7, auto); gap: 6px; margin: 26px 0 6px; padding: 0; list-style: none; overflow-x: auto; }
+.blockplan li { min-width: 108px; padding: 10px 10px 9px; background: var(--paper); box-shadow: var(--shadow); font-size: 13px; line-height: 1.45; }
+.blockplan li b { display: block; font-family: var(--px); font-size: 10.5px; color: var(--pink); margin-bottom: 2px; }
+.blockplan li.brk { background: transparent; box-shadow: none; display: grid; place-items: center; color: var(--ink-3); font-weight: 800; min-width: 70px; }
+@media (max-width: 860px) { .blockplan { grid-template-columns: repeat(2, 1fr); } .blockplan li.brk { grid-column: 1 / -1; } }
 .tool { padding: 22px 20px 20px; background: var(--paper); box-shadow: var(--shadow); position: relative; }
 .tool .ic { font-size: 28px; }
 .tool h4 { margin: 6px 0 4px; font-size: 17px; }
@@ -466,12 +474,13 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 
     <div class="fs" id="s1">
       <div class="txt rv"><div class="num">01</div><span class="chip">팩트 관찰</span><h3>서술 — 보이는 것만, 사실대로</h3><p class="sub">느낌 말은 잠깐 참아요!</p>
-        <ul><li>그림에서 중요한 곳 <b>두 곳에 핀</b>을 찍고, 핀마다 <b>보이는 사실 한 문장</b>을 씁니다.</li>
+        <ul><li><b>👀 첫인상</b> — 서술 맨 위에서 교과서 '감상의 첫발'(49쪽) 느낌 낱말 15개 중 1~2개를 먼저 고릅니다. <b>"느낌은 여기에만!"</b> 맡겨 두고, 아래 서술에는 사실만 씁니다. 판단을 마치면 이 첫인상과 다시 비교해요.</li>
+          <li>그림에서 중요한 곳 <b>두 곳에 핀</b>을 찍고, 핀마다 <b>보이는 사실 한 문장</b>을 씁니다.</li>
           <li>'예쁘다·무섭다' 같은 <b>느낌 말이 들어가면 바로 안내</b>가 떠서 관찰 문장으로 고쳐 쓰게 됩니다.</li>
           <li>작품마다 준비된 <b>관찰 단어 칩</b>을 누르면 문장에 쏙 들어갑니다.</li>
           <li>칠판의 작품 탭에는 그 작품을 고른 학생들이 찍은 <b>① ② 핀 지도</b>가 그려져, 시선이 어디에 모였는지 한눈에 보입니다.</li>
           <li>제출하면 <b>"📍 단서 포착 완료!"</b> 도장이 쾅 찍히고, 쓴 글이 경험치 바로 쏙 빨려 들어갑니다.</li></ul></div>
-      <div class="vis rv"><div class="phone rot-l"><img src="img/s-describe2.jpg" alt="학생 화면: 핀 두 개와 관찰 문장 쓰기" loading="lazy" width="780" height="1688"></div>
+      <div class="vis rv"><div class="phone rot-l"><img src="img/s-first.jpg" alt="학생 화면: 첫인상 느낌 낱말 고르기와 관찰 문장 쓰기" loading="lazy" width="780" height="1688"></div>
         <div class="shot"><span class="tape"></span><img src="img/t-describe.jpg" alt="교사 칠판: 반 전체 관찰 핀 지도와 학생 문장" loading="lazy" width="2160" height="1350"><p class="cap">칠판 [작품 1] 탭 — 핀 지도</p></div></div>
     </div>
 
@@ -481,6 +490,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
           <li>질문은 "칸이 작아지나요?" 같은 묘사가 아니라 <b>"이 조형 장치가 그림 전체에 어떤 느낌과 시각적 효과를 만들어 내나요?"</b>입니다.</li>
           <li>깊이감 · 시선 집중 · 역동감 · 균형처럼 서로 다른 <b>효과 4가지 중 가장 공감 가는 것</b>을 고릅니다. <b>정답·오답이 없어</b> 무엇을 골라도 근거 칸이 열립니다.</li>
           <li>근거 칸은 <b>"그림의 [어느 부분]의 [무엇]이 [어떻게] 되어 있어서 ‘깊이감’이 느껴진다"</b>처럼 고른 효과와 그림 속 위치를 잇는 한 줄 비평으로 이끕니다.</li>
+          <li><b>🏷️ 미술 용어 칩</b> — 근거 칸 아래 구도·강조·균형·대칭·대비·리듬·반복·비례·원근·동세·시선·보색 칩을 누르면 뜻이 나오고 문장에 쏙 들어갑니다. 용어를 쓰면 "🏷️ 미술 용어 사용!"과 ⭐ 보너스가 켜지고, 칠판에는 용어를 쓴 학생 수가 보입니다. (평가 기준 '미술 용어와 지식을 활용하여 설명')</li>
           <li>칠판에는 작품별로 우리 반이 공감한 <b>효과 분포 막대</b>가 쌓이고, 선생님도 칠판의 [👁️ 보조선 켜기]로 TV 속 작품 위에 같은 보조선을 띄워 함께 짚어 볼 수 있습니다.</li></ul>
         <ul class="pick4">
           <li><img src="img/art-ssireum.jpg" alt="" loading="lazy"><span><b>⭕ 원형 구도 · ✖️ 엇갈린 대각선</b>김홍도 〈씨름〉</span></li>
@@ -494,12 +504,13 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
     <div class="fs" id="s3">
       <div class="txt rv"><div class="num">03</div><span class="chip">의미 해석</span><h3>해석 — 내 근거로 작가의 뜻 읽기</h3><p class="sub">정답은 없어요, 근거만 있으면!</p>
         <ul><li>1·2단계에서 내가 쓴 관찰과 분석이 <b>'내가 모은 근거'</b>로 자동 정리되어 위에 놓입니다.</li>
+          <li><b>🗝️ 작가 단서 카드</b> — 내 근거로 첫 해석을 내면, 그제야 작가와 시대에 관한 단서 한 단락이 열립니다(진짜 제목·작가 이름은 비밀). 생각이 달라지면 <b>고쳐 쓸 수 있고(선택)</b>, 처음 해석은 남아 비교할 수 있습니다. '맥락' 관점까지 넓히는 장치입니다.</li>
           <li>모든 작품에 같은 <b>열린 발문</b> — "작가는 이 그림을 통해 어떤 감정이나 이야기를 전하고 싶었을까?"</li>
           <li><b>🎭 분위기와 감정 · 🎨 표현의 의도 · 📖 숨은 메시지</b> 세 렌즈 중 하나를 골라 생각을 시작합니다.</li>
           <li>막힐 때 펼치는 예시 문장은 <b>다른 그림(폭풍우 바다)</b> 이야기라 베낄 수 없고, 쓰는 구조만 배웁니다.</li>
           <li>칠판에는 우리 반이 고른 <b>렌즈 막대</b>가 실시간으로 쌓입니다.</li></ul>
         <div class="quote">"작가는 씨름판의 흥겨운 열기를 전하고 싶었을 것이다. 왜냐하면 구경꾼들이 둥글게 모여 모두 가운데를 보며 웃고 있기 때문이다."<small>— 근거가 있는 해석 (가상 학생 답)</small></div></div>
-      <div class="vis rv"><div class="phone rot-l"><img src="img/s-interpret2.jpg" alt="학생 화면: 해석의 3가지 렌즈 고르기" loading="lazy" width="780" height="1688"></div>
+      <div class="vis rv"><div class="phone rot-l"><img src="img/s-clue.jpg" alt="학생 화면: 첫 해석 뒤 열린 작가 단서 카드와 고쳐 쓴 해석" loading="lazy" width="780" height="1688"></div>
         <div class="shot"><span class="tape pk"></span><img src="img/t-spot.jpg" alt="교사 칠판: 렌즈 막대와 스포트라이트 중인 학생 답" loading="lazy" width="2160" height="1350"><p class="cap">누르면 반 전체 화면에 📢 스포트라이트</p></div></div>
     </div>
 
@@ -508,9 +519,10 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
         <ul><li>💗 생생한 감정 전달 · 📐 치밀한 구도와 표현 · 📜 시대와 삶의 기록 · 👁️ 사실적인 재현 — <b>네 가지 비평 관점</b> 중 하나를 고릅니다.</li>
           <li>문장 틀의 첫 빈칸은 칩으로, <b>"특히 그림 속 ___ 부분"</b>의 둘째 빈칸은 그림을 보고 직접 씁니다. 빈칸이 남으면 공유할 수 없습니다.</li>
           <li>1~4단계 답이 <b>한 장의 비평문 카드</b>로 자동으로 묶입니다.</li>
+          <li><b>🔁 다시 본 느낌</b> — "👀 처음 느낌: 활기찬 → 지금은?" 비평을 마친 뒤 느낌 낱말을 다시 고릅니다. 엽서 에세이 끝에 "처음엔 '활기찬' 느낌이었다. 비평을 마친 지금은 '생생한' 느낌이 든다."가 들어가고, 칠판에는 느낌이 달라진 학생 수가 보입니다.</li>
           <li><b>🏷️ 나만의 작품 제목</b>을 지어야 카드를 공유할 수 있습니다. 진짜 제목을 모르는 채, 내 비평을 담아 작품에 새 이름을 붙입니다.</li>
           <li>내 카드를 공유해야 같은 작품을 고른 친구들의 카드가 열리고, 설득력 있는 카드에 <b>한 사람 3표</b>로 투표합니다.</li></ul></div>
-      <div class="vis duo rv"><div class="phone rot-l"><img src="img/s-judge-title.jpg" alt="학생 화면: 두 문장 틀과 나만의 작품 제목 짓기" loading="lazy" width="780" height="1688"></div>
+      <div class="vis duo rv"><div class="phone rot-l"><img src="img/s-again.jpg" alt="학생 화면: 처음 느낌과 비교해 다시 본 느낌 고르기, 나만의 작품 제목" loading="lazy" width="780" height="1688"></div>
         <div class="phone rot-r"><img src="img/s-wall.jpg" alt="학생 화면: 친구들의 비평문 카드와 투표" loading="lazy" width="780" height="1688"></div></div>
     </div>
 
@@ -587,7 +599,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
     </div>
 
     <div class="ex-feats">
-      <div class="tool rv"><div class="ic">🎴</div><h4>3D 양면 아트 엽서</h4><p><b>앞면</b>은 작품과 내가 고른 비평 관점, 금박 '미술시간 큐레이터 인증'. 공개 전에는 <b>내가 지은 제목 + 🔒 봉인 배지</b>, 공개 후에는 <b>진짜 제목 · 작가 · 제작 연도 · 큐레이터 해설</b>. <b>뒷면</b>은 1~4단계 문장이 한 편으로 이어진 큐레이터 비평 에세이와 줄리앙 우표, 'Curated by 내 이름' 서명.</p></div>
+      <div class="tool rv"><div class="ic">🎴</div><h4>3D 양면 아트 엽서</h4><p><b>앞면</b>은 작품과 내가 고른 비평 관점, 금박 '미술시간 큐레이터 인증'. 공개 전에는 <b>내가 지은 제목 + 🔒 봉인 배지</b>, 공개 후에는 <b>진짜 제목 · 작가 · 제작 연도 · 큐레이터 해설</b>. <b>뒷면</b>은 1~4단계 문장과 <b>첫인상 → 다시 본 느낌</b>이 한 편으로 이어진 큐레이터 비평 에세이와 줄리앙 우표, 'Curated by 내 이름' 서명.</p></div>
       <div class="tool rv"><div class="ic">🎧</div><h4>도슨트 음성</h4><p>학생 기기(브라우저)에 들어 있는 한국어 음성이 미술관 도슨트처럼 차분한 속도(0.95)로 내 비평 에세이를 읽어 줍니다. 읽는 동안 음파가 움직입니다.</p></div>
       <div class="tool rv"><div class="ic">📸</div><h4>이미지로 소장</h4><p>엽서 앞·뒷면을 깔끔한 세로 이미지 두 장으로 만들어 줍니다. 휴대폰은 길게 눌러 사진에 저장합니다.</p></div>
       <div class="tool rv"><div class="ic">🗂️</div><h4>내 비평 도록집</h4><p>로비 맨 위 버튼으로 지금까지 완성한 엽서를 모아 보고, 다시 뒤집고, 다시 들을 수 있습니다.</p></div>
@@ -618,10 +630,46 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 
 <div class="chapter" id="guide"><div class="wrap"><span class="ch-no">PART 03</span><h2 class="ch-title">교사 가이드</h2><p class="ch-lead">수업 진행 순서, 차시 지도, 칠판의 실시간 제어 도구, 수업 시작 방법을 한곳에 모았습니다.</p></div></div>
 
+<section id="warm" style="padding-top:40px">
+  <div class="wrap">
+    <div class="head rv"><div class="sec-no">교사 가이드 · 01 도입 · 동기유발</div><h2>칠판 버튼 하나로, <mark>반 전체가 함께</mark> 시작</h2>
+      <p class="sec-lead">수업을 열면 칠판 대기 화면(QR 아래)에 <b>🎬 동기유발</b> 패널이 있습니다. 누르면 칠판과 모든 학생 화면에 같은 활동이 뜨고, 학생이 적거나 고른 것은 그 기기에만 남습니다.</p></div>
+    <div class="fs" style="padding-top:20px">
+      <div class="txt rv"><div class="num" style="font-size:64px">⚡</div><span class="chip">10초 플래시 관찰</span><h3>10초만 보고, 기억해서 적고, 다시 보기</h3><p class="sub">'보기'와 '관찰'은 달라요!</p>
+        <ul><li>칠판과 학생 화면에 작품이 <b>10초 카운트다운</b>과 함께 보였다가 커튼으로 가려집니다.</li>
+          <li>학생은 "기억나는 것을 모두 적어 보세요" 칸에 한 줄에 하나씩 적고, 몇 개 기억했는지 바로 셉니다.</li>
+          <li>선생님이 <b>[👀 다시 보여 주기]</b>를 누르면 그림이 다시 나오고, 적은 것은 그대로 남아 <b>놓친 것</b>을 찾게 됩니다. → 자연스럽게 1단계 서술로!</li>
+          <li><b>[⏱ 다른 작품 10초]</b>로 네 작품을 돌아가며 할 수 있습니다.</li></ul></div>
+      <div class="vis rv"><div class="phone rot-l"><img src="img/s-warm-flash.jpg" alt="학생 화면: 그림이 가려진 뒤 기억나는 것을 적기" loading="lazy" width="780" height="1688"></div>
+        <div class="shot"><span class="tape"></span><img src="img/t-warm-flash.jpg" alt="교사 칠판: 10초 플래시 관찰 — 작품과 카운트다운" loading="lazy" width="2160" height="1350"><p class="cap">칠판 — 10초 카운트다운</p></div></div>
+    </div>
+    <div class="fs flip">
+      <div class="txt rv"><div class="num" style="font-size:64px">🔍</div><span class="chip pk">부분 확대 미스터리</span><h3>한 부분만 크게 — 어느 작품일까?</h3><p class="sub">작품을 고르기 전에 호기심부터!</p>
+        <ul><li>작품의 한 부분(엿판을 멘 소년, 관 위의 해골, 노란 초승달, 빨간 사각형 …)만 크게 확대해 보여 줍니다.</li>
+          <li>학생은 자기 화면에서 <b>작품 카드 4장 중 하나</b>를 골라요.</li>
+          <li>선생님이 <b>[🔍 정답 공개]</b>를 누르면 확대가 스르륵 풀리며 전체 그림이 나오고, 그 부분에 동그라미가 쳐집니다. 학생 화면엔 "🎉 정답!"</li>
+          <li><b>[▶ 다음 문제]</b>로 다른 작품의 다른 부분이 이어집니다. 진짜 제목은 이때도 비밀(작품 1~4)입니다.</li></ul></div>
+      <div class="vis rv"><div class="phone rot-l"><img src="img/s-warm-mystery.jpg" alt="학생 화면: 확대된 부분을 보고 작품 카드 고르기" loading="lazy" width="780" height="1688"></div>
+        <div class="shot"><span class="tape pk"></span><img src="img/t-warm-reveal.jpg" alt="교사 칠판: 정답 공개 — 전체 그림과 확대했던 부분 동그라미" loading="lazy" width="2160" height="1350"><p class="cap">칠판 — 정답 공개: 확대가 풀리며 전체 그림</p></div></div>
+    </div>
+    <h3 class="rv" style="margin:40px 0 16px;font-size:22px">📋 앱 없이 하는 교실 활동 카드 <small style="font-size:14px;color:var(--ink-3);font-weight:500">칠판 패널에도 들어 있어요</small></h3>
+    <div class="tools four">
+      <div class="tool rv"><div class="ic">👓</div><h4>'보기' 말고 '관찰'하기</h4><p>(교과서 49쪽 · 서술 전 15분) 짝 한 명은 종이 안경으로 눈을 가리고, 다른 한 명이 작품을 말로만 설명 → 그림으로 그린 뒤 원작과 비교합니다.</p></div>
+      <div class="tool rv"><div class="ic">🧍</div><h4>몸으로 구도 만들기</h4><p>(분석 뒤 10분) 모둠이 고른 작품의 구도를 몸으로 재현해 사진 — 씨름 원형 · 마사초 삼각형 · 별밤 소용돌이 · 몬드리안 칸 나누기.</p></div>
+      <div class="tool rv"><div class="ic">🗳️</div><h4>"예뻐요" vs 진짜 비평</h4><p>(판단 전 5분) "색이 예뻐서 좋다"와 "노랑·파랑 보색 대비로 별빛이 강렬해서 가치 있다" 중 설득력 있는 쪽에 손들기.</p></div>
+      <div class="tool rv"><div class="ic">🏛️</div><h4>큐레이터 미션 선언</h4><p>(시작 2분) "오늘 우리 반은 미술관 큐레이터! 전시 개관(엽서)까지 미션 완수" — 미니 전시관·엽서와 이어집니다.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="flow" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">교사 가이드 · 01 수업 진행</div><h2>45분 수업, 한 단계가 <mark>이렇게</mark> 돌아갑니다</h2>
-      <p class="sec-lead">선생님 기기 한 대를 TV에 연결하고, 학생은 각자 휴대폰이나 태블릿으로 들어옵니다. 수업을 열면 칠판 대기 화면에 <b>45분 진행 계획</b>이 함께 뜹니다.</p></div>
+    <div class="head rv"><div class="sec-no">교사 가이드 · 02 수업 진행</div><h2>블록타임 90분, <mark>이렇게</mark> 흘러갑니다</h2>
+      <p class="sec-lead">미술은 두 교시를 이어서 하는 블록 수업입니다. 선생님 기기 한 대를 TV에 연결하고, 학생은 각자 휴대폰·태블릿·노트북으로 들어옵니다. 수업을 열면 칠판 대기 화면에 <b>90분 블록 진행 계획</b>이 함께 뜹니다.</p></div>
+    <ol class="blockplan rv">
+      <li><b>~10분</b>🎬 도입 · 동기유발</li><li><b>~25분</b>📍 서술 + 첫인상</li><li><b>~45분</b>📐 분석 + 몸으로 구도</li><li class="brk">☕ 쉬는 시간</li>
+      <li><b>~60분</b>💡 해석 + 작가 단서</li><li><b>~75분</b>⚖️ 판단 · 엽서</li><li><b>~90분</b>🔓 발표 → 정체 공개 → 첫인상 변화</li></ol>
+    <h3 class="rv" style="margin:34px 0 12px;font-size:20px">한 단계는 이렇게 돌아갑니다</h3>
     <ol class="flow">
       <li class="rv"><span class="who t">교사</span><h4>단계 열기</h4><p>칠판에서 ▶ 다음을 누르면 모든 학생 화면이 같은 단계로 넘어갑니다.</p></li>
       <li class="rv"><span class="who s">학생</span><h4>찍고 · 고르고 · 쓰기</h4><p>내가 고른 명화에 핀을 찍고, 보조선으로 조형 장치를 살펴 공감하는 효과를 고르고, 근거 문장을 씁니다.</p></li>
@@ -635,7 +683,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 
 <section id="map" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">교사 가이드 · 02 차시 지도</div><h2>한 차시, <mark>명화 4선</mark> 중 끌리는 한 점을</h2>
+    <div class="head rv"><div class="sec-no">교사 가이드 · 03 차시 지도</div><h2>한 차시, <mark>명화 4선</mark> 중 끌리는 한 점을</h2>
       <p class="sec-lead">감상 단원은 하나의 통합 수업입니다. 서로 다른 조형적 매력을 가진 네 작품 중 학생이 직접 고르고, 모두 같은 펠드먼 4단계로 읽습니다. 표현 단원은 여러 주에 걸친 실기 수업을 이어서 진행합니다.</p></div>
     <div class="map">
       <div class="lesson rv"><span class="no">01</span><div class="th"><img src="img/art-ssireum.jpg" alt="" loading="lazy"></div><h4>시선과 해학의 풍속화</h4><p>김홍도 〈씨름〉 · 원형 구도</p><span class="unit">감상 · 작품 1</span></div>
@@ -651,10 +699,10 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 
 <section id="tools" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">교사 가이드 · 03 실시간 제어 도구</div><h2>TV에 띄우고, <mark>키 하나로</mark> 진행</h2>
+    <div class="head rv"><div class="sec-no">교사 가이드 · 04 실시간 제어 도구</div><h2>TV에 띄우고, <mark>키 하나로</mark> 진행</h2>
       <p class="sec-lead">교사 화면은 프로젝터·TV용 칠판으로 설계했습니다. 수업 중에는 키보드 단축키만으로 진행할 수 있습니다.</p></div>
     <div class="tools">
-      <div class="tool rv"><div class="ic">📱</div><h4>QR 입장</h4><p>수업을 열면 칠판에 QR과 접속한 학생 번호판이 뜹니다. 학생은 찍고 바로 들어옵니다.</p></div>
+      <div class="tool rv"><div class="ic">🎬</div><h4>동기유발</h4><p>대기 화면의 <b>⚡ 10초 플래시 관찰 · 🔍 부분 확대 미스터리</b>를 누르면 칠판과 모든 학생 화면에 함께 뜹니다. QR과 접속 번호판도 같은 화면에.</p></div>
       <div class="tool rv"><div class="ic">🖼️</div><h4>작품별 필터 탭</h4><p><b>[전체]</b>는 네 작품의 선택 인원과 단계별 제출 현황, <b>[작품 1~4]</b>는 그 작품만의 핀 지도·효과 분포 막대·비평 순위와 <b>조형 보조선</b>을 보여 줍니다.</p></div>
       <div class="tool rv"><div class="ic">🔓</div><h4>작품 정보 일괄 공개</h4><p>발표가 끝난 뒤 <b>[실제 작품 정보 및 해설 공개하기]</b> 한 번이면 모든 학생 엽서와 칠판이 실시간으로 공개됩니다. (<kbd>I</kbd> 키)</p></div>
       <div class="tool rv"><div class="ic">🗂️</div><h4>엽서 전시</h4><p>판단·결과 단계에 반 전체 3D 엽서가 투표 순으로 모입니다. 누르면 뒤집히고, 크게 보기로 도슨트 음성을 함께 듣습니다.</p></div>
@@ -678,7 +726,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 <section id="start" style="padding-top:40px">
   <div class="wrap start">
     <div class="rv">
-      <div class="sec-no">교사 가이드 · 04 수업 시작</div><h2>주소 하나, <mark>QR 한 번</mark></h2>
+      <div class="sec-no">교사 가이드 · 05 수업 시작</div><h2>주소 하나, <mark>QR 한 번</mark></h2>
       <ol>
         <li><div><b>선생님이 수업 열기</b><span>교사 로비에서 반과 [감상 단원 · 명화 4선 선택 비평] 카드를 고르면 칠판에 QR이 뜹니다.</span></div></li>
         <li><div><b>학생 입장</b><span>QR을 찍거나 주소로 들어와 반·번호·이름을 입력하면 자동으로 오늘 수업에 들어오고, 비평할 명화를 한 점 고릅니다.</span></div></li>
@@ -695,7 +743,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
 
 <section id="faq" style="padding-top:40px">
   <div class="wrap">
-    <div class="head rv"><div class="sec-no">교사 가이드 · 05 자주 묻는 질문</div><h2>자주 묻는 <mark>질문</mark></h2></div>
+    <div class="head rv"><div class="sec-no">교사 가이드 · 06 자주 묻는 질문</div><h2>자주 묻는 <mark>질문</mark></h2></div>
     <div class="faq">
       <details class="rv"><summary>어떤 기기에서 되나요?</summary><p>인터넷 브라우저만 있으면 됩니다. 학생은 휴대폰·태블릿·노트북 모두 가능하고, 교사는 노트북을 TV나 프로젝터에 연결해 씁니다. 앱 설치는 필요 없습니다.</p></details>
       <details class="rv"><summary>학생 계정을 만들어야 하나요?</summary><p>아니요. 처음 한 번 학년·반·번호·이름을 고르면 그 기기에 기억되고, 선생님이 수업을 열면 자동으로 입장합니다.</p></details>
@@ -707,6 +755,8 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
       <details class="rv"><summary>학생마다 다른 작품을 고르면 칠판은 어떻게 보나요?</summary><p>칠판 위쪽의 <b>[전체]</b> 탭은 네 작품의 선택 인원과 단계별 제출 현황을, <b>[작품 1~4]</b> 탭은 그 작품을 고른 학생들의 핀 지도·응답·비평 순위만 보여 줍니다. 아직 고르지 않은 학생 수도 함께 보입니다.</p></details>
       <details class="rv"><summary>작품의 진짜 제목은 언제 공개되나요?</summary><p>선생님이 칠판에서 <b>[🔓 실제 작품 정보 및 해설 공개하기]</b>를 누르거나 결과 공개 단계로 넘길 때입니다. 그 전까지 엽서에는 학생이 지은 제목과 시대 힌트만 보입니다. 다시 누르면 잠금으로 돌아갑니다.</p></details>
       <details class="rv"><summary>연수나 시연 때 빠르게 체험하려면요?</summary><p>교사 로비 맨 위 <b>[🎪 부스 체험 모드]</b>를 켜 두세요. 학생 첫 화면에 '빠른 입장' 버튼이 생겨 학번 없이 '체험선생님'으로 바로 들어오고, 혼자서 1~4단계를 진행하며 엽서 아래 '작품 정체 바로 확인하기'로 직접 공개해 볼 수 있습니다. 감상 화면의 '처음부터 다시 체험'을 누르면 다음 분이 새로 시작합니다. 정규 수업 전에는 꼭 끄세요.</p></details>
+      <details class="rv"><summary>세특·평가에 쓸 기록은 어디서 보나요?</summary><p>칠판의 <b>CSV 저장</b>을 누르면 학생별로 첫인상, 서술 문장, 고른 효과와 근거(사용한 미술 용어 표시), 해석(단서 보기 전 처음 해석 포함), 판단 관점·문장, 나만의 제목, 다시 본 느낌이 한 줄씩 담겨 엑셀로 열립니다.</p></details>
+      <details class="rv"><summary>블록타임이 아닌 45분 수업에서도 되나요?</summary><p>네. 동기유발은 하나만(5분), 교실 활동 카드는 건너뛰고, 해석의 '고쳐 쓰기'는 선택이라 생략할 수 있습니다. 칠판에서 단계를 넘기는 대로 함께 움직입니다.</p></details>
       <details class="rv"><summary>다른 작품으로 수업하고 싶어요.</summary><p>작품 이미지와 관찰 칩·분석 질문·비하인드 스토리를 작품 데이터 파일에 추가하고, 명화 목록에 그 작품 이름을 넣으면 학생 갤러리와 칠판 탭에 새 액자가 생깁니다.</p></details>
     </div>
   </div>
@@ -741,7 +791,7 @@ footer .credit { font-size: 12.5px; color: var(--ink-3); }
     rb.textContent = opened ? "🔒 다시 봉인하기" : "🔓 선생님 버튼 체험 — 작품 정체 공개하기";
     flip.classList.remove("lit"); void flip.offsetWidth; if (opened) flip.classList.add("lit");
   };
-  const BODY = "그림 앞에 서서 가장 먼저 눈에 들어온 장면은 이렇다. 가운데에서 두 사람이 서로 붙잡고 있다. 구경꾼들이 둥글게 앉아 있다. 조형의 눈으로 다시 보면, 구도와 시선을 살펴보면 둥근 원 모양으로 앉아 시선이 가운데 씨름꾼에게 모인다. 동세와 강조를 살펴보면 배경을 비우고 두 씨름꾼의 몸을 엇갈린 대각선으로 그려 힘이 부딪치는 순간을 보여 준다. 화가는 구경꾼들을 둥근 원 모양으로 배치하여 시선이 가운데 씨름꾼으로 모이게 했고, 이를 통해 흥겹고 떠들썩한 분위기를 전달하려 했다. 그래서 나는 이렇게 평가한다. 이 작품은 흥겹고 떠들썩한 감정을 생생하게 전달하기 때문에 가치가 있다. 특히 그림 속 둥글게 모여 웃는 구경꾼들 부분이 그 느낌을 가장 잘 보여준다.";
+  const BODY = "그림 앞에 서서 가장 먼저 눈에 들어온 장면은 이렇다. 가운데에서 두 사람이 서로 붙잡고 있다. 구경꾼들이 둥글게 앉아 있다. 조형의 눈으로 다시 보면, 구도와 시선을 살펴보면 둥근 원 모양으로 앉아 시선이 가운데 씨름꾼에게 모인다. 동세와 강조를 살펴보면 배경을 비우고 두 씨름꾼의 몸을 엇갈린 대각선으로 그려 힘이 부딪치는 순간을 보여 준다. 화가는 구경꾼들을 둥근 원 모양으로 배치하여 시선이 가운데 씨름꾼으로 모이게 했고, 이를 통해 흥겹고 떠들썩한 분위기를 전달하려 했다. 그래서 나는 이렇게 평가한다. 이 작품은 흥겹고 떠들썩한 감정을 생생하게 전달하기 때문에 가치가 있다. 특히 그림 속 둥글게 모여 웃는 구경꾼들 부분이 그 느낌을 가장 잘 보여준다. 처음 이 그림 앞에 섰을 때는 '활기찬' 느낌이었다. 비평을 마친 지금은 '생생한' 느낌이 든다.";
   const tts = document.getElementById("ttsBtn");
   let speaking = false;
   const setOn = (on) => { speaking = on; tts.classList.toggle("on", on); tts.querySelector("b").textContent = on ? "⏹ 음성 멈추기" : "🎧 도슨트 음성 듣기"; };
